@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>FourCheckers</title>
+</head>
+<body>
+    <h2>***Checkerboard***</h2>
+    <table class="checkerboard">
+        {%for i in range(num)%}
+        <tr class="main">
+            {%for j in range(cup)%}
+                <td id="color{{(i+j)%2+1}}"></td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+        {%if color1==color1%}
+        <style>#color1{background-color: {{color1}};}</style>
+        <style>h2{background-color: {{color1}};}</style>
+        {%endif%}
+        {%if color2==color2%}
+        <style>#color2{background-color: {{color2}};}</style>
+        <style>h2{color: {{color2}};}</style>
+        {%endif%}
+    </table>
+</body>
+</html>

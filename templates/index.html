@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+    <h2>***Checkerboard***</h2>
+    <table class="checkerboard">
+    <!-- this for loop repeats the table rows 8 times -->
+    {%for i in range(8):%}
+        <tr class="main">
+            <!-- this for loop repeats the able data 8 times -->
+            {%for j in range(8)%}
+            <td id="color{{(i+j)%2+1}}"></td>
+            {%endfor%}
+        </tr>
+        <!-- repeated code duplicating using jinja syntax above -->
+        <!-- <tr class="second">
+            {%for j in range(4)%}
+            <td id="color">2</td>
+            <td id="color">1</td>
+            {%endfor%}
+        </tr> -->
+    {%endfor%}
+    
+    </table>
+    
+</body>
+</html>
